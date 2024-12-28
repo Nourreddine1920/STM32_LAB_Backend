@@ -1,4 +1,4 @@
-# PFA Backend
+# SM32 LAB Backend
 
 Welcome to the **STM32 LAB Backend Project**, a robust STM32 LAB application developed using **Django**. This application powers the **eLAB platform**, enabling user management, data handling, and seamless deployment with **Docker**. It's designed with scalability, performance, and developer experience in mind.
 
@@ -114,7 +114,7 @@ open htmlcov/index.html
 ### Type Checks
 Run static type checks with:
 ```bash
-mypy pfa_backend
+mypy stm32_lab_backend
 ```
 
 ---
@@ -164,7 +164,7 @@ This application comes with **Celery** for asynchronous task processing.
 ### Running a Celery Worker
 To start a worker:
 ```bash
-cd pfa_backend
+cd stm32_lab_backend
 celery -A config.celery_app worker -l info
 ```
 Ensure you are in the same folder as `manage.py` when running Celery commands.
