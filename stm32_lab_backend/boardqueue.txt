@@ -1,0 +1,32 @@
+make exam:
+    -> first use && board queue not  exist
+        -> 1 create boardqueue 
+        -> 2 create userrequest (by default) (handled=False)
+        -> 3 redirect /board (front)
+    -> boardqueue exist 
+        -> userrequest expired (handled=True)
+            -> (/boadslist)
+                -> button (request) -> other user make request before you
+                -> button (make exam) -> no user before you create request
+            -> (/board)
+                -> redirect (/boardslist)
+        -> userrequest not expired 
+            -> (/boardslist)
+                -> button (make exam) -> request (handled =False) (curent user)
+                -> button (request) -> create user request (handled=False) (other user)
+            -> (/board)
+                -> redirect (/boardslist) if userrequest expired
+request:
+    -> board queue exist (not emty)
+        -> userrequest expired (handled=True)
+            -> (/boadslist)
+                -> button (request) -> other user make request before you
+                -> button (make exam) -> no user before you create request
+            -> (/board)
+                -> redirect (/boardslist)
+        -> userrequest not expired 
+            -> (/boardslist)
+                -> button (make exam) -> request (handled =False) (curent user)
+                -> button (request) -> create user request (handled=False) (other user)
+            -> (/board)
+                -> redirect (/boardslist) if userrequest expired
